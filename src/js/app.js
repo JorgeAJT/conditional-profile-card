@@ -9,7 +9,8 @@ function render(variables = {}) {
   let yourName = variables.name == null ? "Lucy" : `${variables.name}`;
   let yourLastName =
     variables.lastName == null ? "Boilett" : `${variables.lastName}`;
-  let yourRole = variables.role == null ? "Web Developer" : `${variables.role}`;
+  let yourProfession =
+    variables.profession == null ? "Web Developer" : `${variables.profession}`;
   let yourCity = variables.city == null ? "Miami" : `${variables.city}`;
   let yourCountry = variables.country == null ? "USA" : `${variables.country}`;
   let yourTwitter =
@@ -29,17 +30,19 @@ function render(variables = {}) {
       ? "https://instagram.com/"
       : `https://instagram.com/${variables.instagram}`;
   // reset the website body with the new html output
-  document.querySelector("#widget_content").innerHTML = `<div class="widget">
+  document.querySelector(
+    "#widget_content"
+  ).innerHTML = `<div class="widget mx-auto">
             ${cover}
           <img src="${variables.avatarURL}" class="photo" />
           <h1>${yourName} ${yourLastName}</h1>
-          <h2>${yourRole}</h2>
+          <h2>${yourProfession}</h2>
           <h3>${yourCity}, ${yourCountry}</h3>
           <ul class=${variables.socialMediaPosition}>
-          <li><a href=${yourTwitter}><i class="fab fa-twitter fs-5"></i></a></li>
-          <li><a href=${yourGithub}><i class="fab fa-github fs-5"></i></a></li>
-          <li><a href=${yourLinkedin}><i class="fab fa-linkedin fs-5"></i></a></li>
-          <li><a href=${yourInstagram}><i class="fab fa-instagram fs-5"></i></a></li>
+            <li><a href=${yourTwitter}><i class="fab fa-twitter fs-5"></i></a></li>
+            <li><a href=${yourGithub}><i class="fab fa-github fs-5"></i></a></li>
+            <li><a href=${yourLinkedin}><i class="fab fa-linkedin fs-5"></i></a></li>
+            <li><a href=${yourInstagram}><i class="fab fa-instagram fs-5"></i></a></li>
           </ul>
         </div>
     `;
@@ -65,7 +68,7 @@ window.onload = function() {
     instagram: null,
     name: null,
     lastName: null,
-    role: null,
+    profession: null,
     country: null,
     city: null
   };
